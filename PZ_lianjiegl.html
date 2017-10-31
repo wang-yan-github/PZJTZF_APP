@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP 后台管理</title>
+
+    <script src="js/api/jquery-1.9.1.min.js"></script>
+    <script src="js/api/PZ_lianjiegl.js.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+
+</head>
+
+<body class="">
+<!-- 左侧导航 -->
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">张辉</strong>
+                             </span> <span class="text-muted text-xs block">管理员 <b class="caret"></b></span> </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="PZ_liuliangfx.html"><i class="fa fa-line-chart"></i> <span class="nav-label">流量分析</span></a>
+                </li>
+                <li>
+                    <a href="PZ_shouyegl.html"><i class="fa fa-newspaper-o"></i> <span class="nav-label">首页管理</span></a>
+                </li>
+                <li class="active">
+                <a href="PZ_lianjiegl.html"><i class="fa fa-link"></i> <span class="nav-label">链接管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhidugl.html"><i class="fa fa-archive"></i> <span class="nav-label">各项制度管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_banshilc.html"><i class="fa fa-file"></i> <span class="nav-label">办事流程管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhutizr.html"><i class="fa fa-institution"></i> <span class="nav-label">主体责任管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifajiuj.html"><i class="fa fa-handshake-o"></i> <span class="nav-label">执法救济管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifayj.html"><i class="fa fa-book"></i> <span class="nav-label">执法依据管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifaqx.html"><i class="fa fa-gavel"></i> <span class="nav-label">执法权限管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifajg.html"><i class="fa fa-edit"></i> <span class="nav-label">执法结果管理</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- 以上为导航条 -->
+
+
+    <div id="page-wrapper" class="gray-bg">
+
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary ">
+                        <h3>APP 后台管理</h3>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>后台管理系统</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">后台管理</a>
+                    </li>
+                    <li>
+                        <a>链接管理</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>轮播图管理</h5>
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
+                                        data-target="#myModal">新增链接
+                                </button>
+                            </div>
+                            <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content animated bounceInRight">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span
+                                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                            </button>
+                                            <h4 class="modal-title">新增链接</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="get" class="form-horizontal">
+                                                <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span><input
+                                                                    type="file" name="..."></span>
+                                                            <span class="fileinput-filename"></span>
+                                                            <a href="#" class="close fileinput-exists"
+                                                               data-dismiss="fileinput" style="float: none">&times;</a>
+                                                            <small>图片尺寸40*40，大小不超过2M</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="form-group"><label class="col-sm-2 control-label">名称</label>
+                                                    <div class="col-sm-10"><input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="form-group"><label class="col-sm-2 control-label">地址</label>
+
+                                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-primary">保存新增</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="footable table table-bordered table-stripped toggle-arrow-tiny text-center" data-page-size="7">
+                            <thead>
+                            <tr>
+
+                                <th class="text-center">序号</th>
+                                <th class="text-center" data-hide="phone">名称</th>
+                                <th class="text-center" data-hide="phone">地址</th>
+                                <th class="text-center">操作</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>邳州市政府</td>
+                                <td>http://11.12.12.12</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn-primary  btn btn-xs" data-toggle="modal" data-target="#bianji">编辑</button>
+                                        <button type="button" class="btn-danger btn btn-xs">删除</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>邳州市政府</td>
+                                <td>http://11.12.12.12</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn-primary  btn btn-xs" data-toggle="modal" data-target="#bianji">编辑</button>
+                                        <button type="button" class="btn-danger btn btn-xs">删除</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>邳州市政府</td>
+                                <td>http://11.12.12.12</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn-primary  btn btn-xs" data-toggle="modal" data-target="#bianji">编辑</button>
+                                        <button type="button" class="btn-danger btn btn-xs">删除</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>邳州市政府</td>
+                                <td>http://11.12.12.12</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn-primary  btn btn-xs" data-toggle="modal" data-target="#bianji">编辑</button>
+                                        <button type="button" class="btn-danger btn btn-xs">删除</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                            </tfoot>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- FooTable -->
+<script src="js/plugins/footable/footable.all.min.js"></script>
+
+
+<!-- Jasny -->
+<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function() {
+
+        $('.footable').footable();
+
+    });
+
+</script>
+
+<div class="modal inmodal fade" id="bianji"
+     tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">编辑</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <form method="get" class="form-horizontal">
+                        <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                            <div class="col-sm-10">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span><input
+                                                                    type="file" name="..."></span>
+                                    <span class="fileinput-filename"></span>
+                                    <a href="#" class="close fileinput-exists"
+                                       data-dismiss="fileinput" style="float: none">&times;</a>
+                                    <small>图片尺寸40*40，大小不超过2M</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">标题</label>
+                            <div class="col-sm-10"><input type="text" class="form-control" placeholder="邳州市政府">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">地址</label>
+
+                            <div class="col-sm-10"><input type="text" class="form-control" placeholder="http://10.13.18.111">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-primary"
+                        data-dismiss="modal">保存
+                </button>
+                <button type="button"
+                        class="btn btn-white"
+                        data-dismiss="modal">取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP 后台管理</title>
+
+    <script src="js/api/jquery-1.9.1.min.js"></script>
+    <script src="js/api/PZ_liuliangfx.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="">
+<!-- 左侧导航 -->
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">张辉</strong>
+                             </span> <span class="text-muted text-xs block">管理员 <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="PZ_liuliangfx.html"><i class="fa fa-line-chart"></i> <span class="nav-label">流量分析</span></a>
+                </li>
+                <li>
+                    <a href="PZ_shouyegl.html"><i class="fa fa-newspaper-o"></i> <span class="nav-label">首页管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_lianjiegl.html"><i class="fa fa-link"></i> <span class="nav-label">链接管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhidugl.html"><i class="fa fa-archive"></i> <span class="nav-label">各项制度管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_banshilc.html"><i class="fa fa-file"></i> <span class="nav-label">办事流程管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhutizr.html"><i class="fa fa-institution"></i> <span class="nav-label">主体责任管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifajiuj.html"><i class="fa fa-handshake-o"></i> <span class="nav-label">执法救济管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifayj.html"><i class="fa fa-book"></i> <span class="nav-label">执法依据管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifaqx.html"><i class="fa fa-gavel"></i> <span class="nav-label">执法权限管理</span></a>
+                </li>
+                <li>
+                    <a href="PZ_zhifajg.html"><i class="fa fa-edit"></i> <span class="nav-label">执法结果管理</span></a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </nav>
+    <!-- 以上为导航条 -->
+
+
+
+    <div id="page-wrapper" class="gray-bg">
+
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary ">
+                        <h3>APP 后台管理</h3>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>后台管理系统</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a>流量分析</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget style1 navy-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-user-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> 今日访问人数 </span>
+                            <h2 class="font-bold">40</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 lazur-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-user-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> 累计访问人数 </span>
+                            <h2 class="font-bold">260</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 yellow-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-thumbs-up fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> 访问最多内容 </span>
+                            <h2 class="font-bold">处罚流程</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 red-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-search fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> 搜索最多 </span>
+                            <h2 class="font-bold">处罚结果</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>时间变化趋势图</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <canvas id="lineChart" height="140"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>访问量最多内容TOP5</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <canvas id="barChart" height="140"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>各版块访问量</h5>
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-xs btn-white active">今天</button>
+                                <button type="button" class="btn btn-xs btn-white">一周</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <canvas id="barChart1" height="140"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>搜索关键词</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <canvas id="doughnutChart" height="140"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+
+<!-- ChartJS-->
+<script src="js/plugins/chartJs/Chart.min.js"></script>
+
+
+
+<script>
+    $(function () {
+
+        var lineData = {
+            labels: ["00:00~03:00", "03:00~06:00", "06:00~09:00", "09:00~12:00", "12:00~15:00", "15:00~18:00", "18:00~21:00", "21:00~24:00"],
+            datasets: [
+
+                {
+                    label: "data",
+                    backgroundColor: 'rgba(26,179,148,0.5)',
+                    borderColor: "rgba(26,179,148,0.7)",
+                    pointBackgroundColor: "rgba(26,179,148,1)",
+                    pointBorderColor: "#fff",
+                    data: [20, 10, 25, 80, 100, 70, 90, 40]
+                }
+            ]
+        };
+
+        var lineOptions = {
+            responsive: true
+        };
+
+
+        var ctx = document.getElementById("lineChart").getContext("2d");
+        new Chart(ctx, {type: 'line', data: lineData, options:lineOptions});
+
+        var barData = {
+            labels: ["行政许可流程", "行政处罚流程", "处罚结果", "检查结果", "许可结果"],
+            datasets: [
+                {
+                    label: "访问次数",
+                    backgroundColor: 'rgba(26,179,148,0.5)',
+                    borderColor: "rgba(26,179,148,0.7)",
+                    pointBackgroundColor: "rgba(26,179,148,1)",
+                    pointBorderColor: "#fff",
+                    data: [28, 48, 40, 19, 20]
+                }
+            ]
+        };
+
+        var barOptions = {
+            responsive: true
+        };
+
+
+        var ctx2 = document.getElementById("barChart").getContext("2d");
+        new Chart(ctx2, {type: 'horizontalBar', data: barData, options: barOptions});
+
+
+
+        var barData1 = {
+            labels: ["各项制度", "主体责任", "执法依据", "办事流程", "执法权限", "执法救济", "执法结果"],
+            datasets: [
+                {
+                    label: "访问次数",
+                    backgroundColor: 'rgba(26,179,148,0.5)',
+                    borderColor: "rgba(26,179,148,0.1)",
+                    pointBackgroundColor: "rgba(26,179,148,0.1)",
+                    pointBorderColor: "#fff",
+                    data: [28, 45, 50, 70, 40, 30, 90]
+                },
+            ]
+        };
+
+        var barOptions1 = {
+            responsive: true
+        };
+
+
+        var ctx1 = document.getElementById("barChart1").getContext("2d");
+        new Chart(ctx1, {type: 'bar', data: barData1, options:barOptions1});
+
+
+        var doughnutData = {
+            labels: ["处罚结果","检查","处罚","公路局" ],
+            datasets: [{
+                data: [300,100,20,30],
+                backgroundColor: ["#a3e1d4","#dedede","#b5b8cf","#a3e1d4"]
+            }]
+        } ;
+
+
+        var doughnutOptions = {
+            responsive: true
+        };
+
+
+        var ctx4 = document.getElementById("doughnutChart").getContext("2d");
+        new Chart(ctx4, {type: 'doughnut', data: doughnutData, options:doughnutOptions});
+
+
+
+
+    });
+
+</script>
+
+</body>
+
+</html>
