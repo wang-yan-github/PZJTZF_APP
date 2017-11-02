@@ -1,4 +1,4 @@
-$.getJSON("http://60.205.186.12:8080/API/GxzdZfgsAction?choice=GxzdZfgsList", function(data) {
+$.getJSON("http://60.205.186.12:8080/API/ZfqxQlsxAction?choice=ZfqxQlsxList", function(data) {
     $("#table1 tbody").html(""); //清空
     var htmlText = "<tr>";
     //for in循环
@@ -17,7 +17,7 @@ $.getJSON("http://60.205.186.12:8080/API/GxzdZfgsAction?choice=GxzdZfgsList", fu
     htmlText += "</tr>";
     $("#table1 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/GxzdCwgkAction?choice=GxzdCwgkList", function(data) {
+$.getJSON("http://60.205.186.12:8080/API/ZfqxZrsxAction?choice=ZfqxZrsxList", function(data) {
     $("#table2 tbody").html(""); //清空
     var htmlText = "<tr>";
     //for in循环
@@ -36,7 +36,7 @@ $.getJSON("http://60.205.186.12:8080/API/GxzdCwgkAction?choice=GxzdCwgkList", fu
     htmlText += "</tr>";
     $("#table2 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/GxzdSsfaAction?choice=GxzdSsfaList", function(data) {
+$.getJSON("http://60.205.186.12:8080/API/ZfqxJcsxAction?choice=ZfqxJcsxList", function(data) {
     $("#table3 tbody").html(""); //清空
     var htmlText = "<tr>";
     //for in循环
