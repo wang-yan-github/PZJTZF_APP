@@ -23,7 +23,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=list", function
 
     $("#table1 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/ZtzdJtysglsAction?choice=list", function(data) {
     $("#table2 tbody").html(""); //清空
     var htmlText = "";
@@ -49,7 +48,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdJtysglsAction?choice=list", functio
 
     $("#table2 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/ZtzdGlglzAction?choice=list", function(data) {
     $("#table3 tbody").html(""); //清空
     var htmlText = "";
@@ -75,7 +73,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdGlglzAction?choice=list", function(
 
     $("#table3 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/ZtzdXzjtAction?choice=list", function(data) {
     $("#table4 tbody").html(""); //清空
     var htmlText = "";
@@ -101,7 +98,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdXzjtAction?choice=list", function(d
 
     $("#table4 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/ZtzdDfhscAction?choice=list", function(data) {
     $("#table5 tbody").html(""); //清空
     var htmlText = "";
@@ -127,7 +123,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdDfhscAction?choice=list", function(
 
     $("#table5 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/ZtzdHdglzAction?choice=list", function(data) {
     $("#table6 tbody").html(""); //清空
     var htmlText = "";
@@ -153,7 +148,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdHdglzAction?choice=list", function(
 
     $("#table6 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/ZtzdGkglcAction?choice=list", function(data) {
     $("#table7 tbody").html(""); //清空
     var htmlText = "";
@@ -179,7 +173,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdGkglcAction?choice=list", function(
 
     $("#table7 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=list", function(data) {
     $("#table8 tbody").html(""); //清空
     var htmlText = "";

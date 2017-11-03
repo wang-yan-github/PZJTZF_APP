@@ -20,7 +20,6 @@ $.getJSON("http://60.205.186.12:8080/API/ZfjgXkjgAction?choice=list", function(d
 
     $("#table1 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/Zfjj2Action?choice=list", function(data) {
     $("#table2 tbody").html(""); //清空
     var htmlText = "";
@@ -43,7 +42,6 @@ $.getJSON("http://60.205.186.12:8080/API/Zfjj2Action?choice=list", function(data
 
     $("#table2 tbody").html(htmlText);
 });
-
 $.getJSON("http://60.205.186.12:8080/API/Zfjj3Action?choice=list", function(data) {
     $("#table3 tbody").html(""); //清空
     var htmlText = "";
