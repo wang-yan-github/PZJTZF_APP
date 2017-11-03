@@ -55,7 +55,3 @@ $.getJSON("http://60.205.186.12:8080/API/ZfjgJcjgAction?choice=ZfjgJcjgList", fu
     htmlText += "</tr>";
     $("#table3 tbody").html(htmlText);
 });
-
-$("#b01").click(
-
-);
