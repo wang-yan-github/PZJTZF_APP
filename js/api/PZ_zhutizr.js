@@ -38,7 +38,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=list", function
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -63,7 +63,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdJtysglsAction?choice=list", functio
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdJtysglsAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -88,7 +88,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdGlglzAction?choice=list", function(
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdGlglzAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -113,7 +113,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdXzjtAction?choice=list", function(d
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdXzjtAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -138,7 +138,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdDfhscAction?choice=list", function(
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdDfhscAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -163,7 +163,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdHdglzAction?choice=list", function(
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdHdglzAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -188,7 +188,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdGkglcAction?choice=list", function(
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdGkglcAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -213,7 +213,7 @@ $.getJSON("http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=list", function
         htmlText += "<td>" + data[x].people +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
+            "<a href='http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=remove&id="+data[x].id+"' class='btn-danger btn btn-xs'>删除</a> " +
             "</div> </td>";
         htmlText += "</tr>";
     }
@@ -229,8 +229,8 @@ function s1() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
     $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 function s2() {
     var si1 = $("#si1").val();
@@ -240,8 +240,8 @@ function s2() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
     $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 function s3() {
     var si1 = $("#si1").val();
@@ -251,8 +251,8 @@ function s3() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
     $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 function s4() {
     var si1 = $("#si1").val();
@@ -262,8 +262,8 @@ function s4() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
     $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 function s5() {
     var si1 = $("#si1").val();
@@ -273,8 +273,8 @@ function s5() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
     $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 function s6() {
     var si1 = $("#si1").val();
@@ -284,8 +284,7 @@ function s6() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
-    $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 function s7() {
     var si1 = $("#si1").val();
@@ -295,8 +294,8 @@ function s7() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
     $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 function s8() {
     var si1 = $("#si1").val();
@@ -306,7 +305,7 @@ function s8() {
     var si5 = $("#si5").val();
 
     var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
-    alert(url);
     $.getJSON(url, function(data) {})
+    window.location.reload();
 }
 
