@@ -174,3 +174,4 @@ $.getJSON("http://60.205.186.12:8080/API/ZtyjJtgczlAction?choice=list", function
 
     $("#table8 tbody").html(htmlText);
 });
+
