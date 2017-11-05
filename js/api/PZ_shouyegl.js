@@ -128,7 +128,7 @@ $.getJSON("http://localhost:8080/API/"+u5+"?choice=list", function(data) {
         htmlText += "<tr>";
         htmlText += "<td>" + data[x].id +"</td>";
         htmlText += "<td width='30%'>" + data[x].title +"</td>";
-        htmlText += "<td>" + data[x].content.substring(0,10) +"</td>";
+        htmlText += "<td title='"+data[x].content+"'>" + data[x].content.substring(0,10) +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs' onclick='e5("+data[x].id+")' data-toggle='modal' data-target='#m5'>编辑</button> " +
             "<button type='button' class='btn-danger btn btn-xs' onclick='r5("+data[x].id+")'>删除</button> " +
