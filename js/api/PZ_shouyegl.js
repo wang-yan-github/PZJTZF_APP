@@ -147,6 +147,8 @@ function s1() {
 function s2() {
     $("#save2 .date-class").val(timestamp);
     $("#save2 .url-class").val(window.location.href);
+    var content = $("#save2 .note-editable").text();
+    $("#contentid").val(content);
     document.getElementById("save2").submit();
 }
 function s3() {
@@ -226,7 +228,7 @@ function e2(editid){
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save2 .save-class:first").val(data[x].title);
-            $("#save2 .save-class:eq(1)").val(data[x].content);
+            $("#save2 .note-editable").text(data[x].content);
             $("#save2 .fileinput-filename:first").text(data[x].image);
             $("#save2 .id-class").val(editid);
         }
