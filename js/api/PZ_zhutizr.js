@@ -405,11 +405,6 @@ function r8(removeid) {
     $.getJSON(url, function(data) {});
     window.location.reload();
 }
-function r1(removeid) {
-    var url = "http://60.205.186.12:8080/API/"+u1+"?choice=remove&id="+removeid+"";
-    $.getJSON(url, function(data) {});
-    window.location.reload();
-}
 // 编辑
 function e1(editid){
     
