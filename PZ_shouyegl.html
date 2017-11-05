@@ -123,10 +123,10 @@
                         <div class="pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                        data-target="#xinzenglunbotu">新增轮播图
+                                        data-target="#m1">新增轮播图
                                 </button>
                             </div>
-                            <div class="modal inmodal" id="xinzenglunbotu" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal inmodal" id="m1" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content animated bounceInRight">
                                         <div class="modal-header">
@@ -298,30 +298,38 @@
                         <div class="pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                        data-target="#myModal1">新增通知栏管理
+                                        data-target="#m3">新增通知栏管理
                                 </button>
                             </div>
-                            <div class="modal inmodal" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal inmodal" id="m3" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content animated bounceInRight">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"><span
                                                     aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                                             </button>
-                                            <h4 class="modal-title">新增通知栏管理</h4>
+                                            <h4 class="modal-title">通知栏管理</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="get" class="form-horizontal">
-                                                <div class="form-group"><label class="col-sm-2 control-label">通知内容</label>
-                                                    <div class="col-sm-10"><input type="text" class="form-control">
+                                            <form method="get" class="form-horizontal" id="save3">
+                                                <div class="form-group"><label class="col-sm-2 control-label">标题</label>
+                                                    <div class="col-sm-10"><input type="text" class="form-control save-class">
+                                                    </div>
+                                                </div>
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="form-group"><label class="col-sm-2 control-label">内容</label>
+                                                    <div class="col-sm-10 save-class">
+                                                        <div class="summernote">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
-                                            <button type="button" class="btn btn-primary">保存新增</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="s3()">保存</button>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -366,8 +374,40 @@
                         <div class="pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                        data-target="#myModal1">新增友情链接
+                                        data-target="#m4">新增友情链接
                                 </button>
+                            </div>
+                        </div>
+                        <div class="modal inmodal" id="m4" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span
+                                                aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title">友情链接</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="get" class="form-horizontal" id="save4">
+                                            <div class="form-group"><label class="col-sm-2 control-label">标题</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control save-class">
+                                                </div>
+                                            </div>
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">内容</label>
+                                                <div class="col-sm-10 save-class">
+                                                    <div class="summernote">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="s4()">保存</button>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -410,12 +450,43 @@
                         <div class="pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                        data-target="#myModal1">新增启动页面
+                                        data-target="#m5">新增启动页面
                                 </button>
+                            </div>
+                            <div class="modal inmodal" id="m5" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content animated bounceInRight">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span
+                                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                            </button>
+                                            <h4 class="modal-title">启动页面</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="get" class="form-horizontal" id="save5">
+                                                <div class="form-group"><label class="col-sm-2 control-label">标题</label>
+                                                    <div class="col-sm-10"><input type="text" class="form-control save-class">
+                                                    </div>
+                                                </div>
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="form-group"><label class="col-sm-2 control-label">内容</label>
+                                                    <div class="col-sm-10 save-class">
+                                                        <div class="summernote">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="s5()">保存</button>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="ibox-content">
                         <table class="footable table table-bordered table-stripped toggle-arrow-tiny text-center" data-page-size="7" id="table5">
                             <thead>
@@ -440,8 +511,6 @@
                         </table>
 
                     </div>
-
-
                 </div>
             </div>
         </div>
