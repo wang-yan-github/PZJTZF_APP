@@ -268,7 +268,7 @@ function s3() {
     var si2 = $("#save3 .save-class:eq(1) .note-editable").text();
     var si3 = $("#save3 .save-class:eq(2)").val();
     var si4 = $("#save3 .save-class:eq(3)").val();
-    var si5 = $("#save8 .save-class:eq(4)").val();
+    var si5 = $("#save3 .save-class:eq(4)").val();
     var id = $("#save1 .save-class:last").val();
 
     if(id){
@@ -285,7 +285,7 @@ function s4() {
     var si2 = $("#save4 .save-class:eq(1) .note-editable").text();
     var si3 = $("#save4 .save-class:eq(2)").val();
     var si4 = $("#save4 .save-class:eq(3)").val();
-    var si5 = $("#save8 .save-class:eq(4)").val();
+    var si5 = $("#save4 .save-class:eq(4)").val();
     var id = $("#save1 .save-class:last").val();
 
     if(id){
@@ -302,7 +302,7 @@ function s5() {
     var si2 = $("#save5 .save-class:eq(1) .note-editable").text();
     var si3 = $("#save5 .save-class:eq(2)").val();
     var si4 = $("#save5 .save-class:eq(3)").val();
-    var si5 = $("#save8 .save-class:eq(4)").val();
+    var si5 = $("#save5 .save-class:eq(4)").val();
     var id = $("#save1 .save-class:last").val();
 
     if(id){
@@ -319,7 +319,7 @@ function s6() {
     var si2 = $("#save6 .save-class:eq(1) .note-editable").text();
     var si3 = $("#save6 .save-class:eq(2)").val();
     var si4 = $("#save6 .save-class:eq(3)").val();
-    var si5 = $("#save8 .save-class:eq(4)").val();
+    var si5 = $("#save6 .save-class:eq(4)").val();
     var id = $("#save1 .save-class:last").val();
 
     if(id){
@@ -335,7 +335,7 @@ function s7() {
     var si2 = $("#save7 .save-class:eq(1) .note-editable").text();
     var si3 = $("#save7 .save-class:eq(2)").val();
     var si4 = $("#save7.save-class:eq(3)").val();
-    var si5 = $("#save8 .save-class:eq(4)").val();
+    var si5 = $("#save7 .save-class:eq(4)").val();
     var id = $("#save1 .save-class:last").val();
 
     if(id){
