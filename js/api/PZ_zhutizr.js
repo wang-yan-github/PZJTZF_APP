@@ -236,83 +236,83 @@ function s1() {
     var si4 = $("#save1 .save-class:eq(3)").val();
     var si5 = $("#save1 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     $.getJSON(url, function(data) {});
     window.location.reload();
 }
 function s2() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
-    var si3 = $("#save1 .save-class:eq(2)").val();
-    var si4 = $("#save1 .save-class:eq(3)").val();
-    var si5 = $("#save1 .save-class:eq(4)").val();
+    var si1 = $("#save2 .save-class:first").val();
+    var si2 = $("#save2 .save-class:eq(1) .note-editable").text();
+    var si3 = $("#save2 .save-class:eq(2)").val();
+    var si4 = $("#save2 .save-class:eq(3)").val();
+    var si5 = $("#save2 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u2+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     $.getJSON(url, function(data) {})
     window.location.reload();
 }
 function s3() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
-    var si3 = $("#save1 .save-class:eq(2)").val();
-    var si4 = $("#save1 .save-class:eq(3)").val();
-    var si5 = $("#save1 .save-class:eq(4)").val();
+    var si1 = $("#save3 .save-class:first").val();
+    var si2 = $("#save3 .save-class:eq(1) .note-editable").text();
+    var si3 = $("#save3 .save-class:eq(2)").val();
+    var si4 = $("#save3 .save-class:eq(3)").val();
+    var si5 = $("#save3 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u3+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     $.getJSON(url, function(data) {})
     window.location.reload();
 }
 function s4() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
-    var si3 = $("#save1 .save-class:eq(2)").val();
-    var si4 = $("#save1 .save-class:eq(3)").val();
-    var si5 = $("#save1 .save-class:eq(4)").val();
+    var si1 = $("#save4 .save-class:first").val();
+    var si2 = $("#save4 .save-class:eq(1) .note-editable").text();
+    var si3 = $("#save4 .save-class:eq(2)").val();
+    var si4 = $("#save4 .save-class:eq(3)").val();
+    var si5 = $("#save4 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u4+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     $.getJSON(url, function(data) {})
     window.location.reload();
 }
 function s5() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
-    var si3 = $("#save1 .save-class:eq(2)").val();
-    var si4 = $("#save1 .save-class:eq(3)").val();
-    var si5 = $("#save1 .save-class:eq(4)").val();
+    var si1 = $("#save5 .save-class:first").val();
+    var si2 = $("#save5 .save-class:eq(1) .note-editable").text();
+    var si3 = $("#save5 .save-class:eq(2)").val();
+    var si4 = $("#save5 .save-class:eq(3)").val();
+    var si5 = $("#save5 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u5+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     $.getJSON(url, function(data) {})
     window.location.reload();
 }
 function s6() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
-    var si3 = $("#save1 .save-class:eq(2)").val();
-    var si4 = $("#save1 .save-class:eq(3)").val();
-    var si5 = $("#save1 .save-class:eq(4)").val();
+    var si1 = $("#save6 .save-class:first").val();
+    var si2 = $("#save6 .save-class:eq(1) .note-editable").text();
+    var si3 = $("#save6 .save-class:eq(2)").val();
+    var si4 = $("#save6 .save-class:eq(3)").val();
+    var si5 = $("#save6 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u6+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     window.location.reload();
 }
 function s7() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
-    var si3 = $("#save1 .save-class:eq(2)").val();
-    var si4 = $("#save1 .save-class:eq(3)").val();
-    var si5 = $("#save1 .save-class:eq(4)").val();
+    var si1 = $("#save7 .save-class:first").val();
+    var si2 = $("#save7 .save-class:eq(1) .note-editable").text();
+    var si3 = $("#save7 .save-class:eq(2)").val();
+    var si4 = $("#save7.save-class:eq(3)").val();
+    var si5 = $("#save7 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u7+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     $.getJSON(url, function(data) {})
     window.location.reload();
 }
 function s8() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
-    var si3 = $("#save1 .save-class:eq(2)").val();
-    var si4 = $("#save1 .save-class:eq(3)").val();
-    var si5 = $("#save1 .save-class:eq(4)").val();
+    var si1 = $("#save8 .save-class:first").val();
+    var si2 = $("#save8 .save-class:eq(1) .note-editable").text();
+    var si3 = $("#save8 .save-class:eq(2)").val();
+    var si4 = $("#save8 .save-class:eq(3)").val();
+    var si5 = $("#save8 .save-class:eq(4)").val();
 
-    var url = "http://60.205.186.12:8080/API/ZtzdJtgczlAction?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
+    var url = "http://60.205.186.12:8080/API/"+u8+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
     $.getJSON(url, function(data) {})
     window.location.reload();
 }
