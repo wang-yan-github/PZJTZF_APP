@@ -138,7 +138,7 @@
                                         <div class="modal-body">
                                             <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save1">
                                                 <input type="hidden" name="choice" value="UploadFile">
-                                                <input type="hidden" name="id" value="" class="save-class">
+                                                <input type="hidden" name="id" class="id-class">
                                                 <input type="hidden" name="url" class="url-class">
                                                 <input type="hidden" name="date" class="date-class">
                                                 <div class="form-group"><label class="col-sm-2 control-label">标题</label>
@@ -212,57 +212,59 @@
                         <div class="pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                        data-target="#myModal2">新增热门精选
+                                        data-target="#m2">新增热门精选
                                 </button>
                             </div>
-                            <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal inmodal" id="m2" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content animated bounceInRight">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"><span
                                                     aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                                             </button>
-                                            <h4 class="modal-title">新增热门</h4>
+                                            <h4 class="modal-title">热门精选</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="get" class="form-horizontal">
-                                                <div class="form-group"><label class="col-sm-2 control-label">图片</label>
-                                                    <div class="col-sm-10">
-                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                            <span class="btn btn-default btn-file"><span
-                                                                    class="fileinput-new">添加图片</span><span
-                                                                    class="fileinput-exists">Change</span><input
-                                                                    type="file" name="..."></span>
-                                                            <span class="fileinput-filename"></span>
-                                                            <a href="#" class="close fileinput-exists"
-                                                               data-dismiss="fileinput" style="float: none">&times;</a>
-                                                            <small>图片尺寸40*40，大小不超过2M</small>
+                                            <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save2">
+                                                <input type="hidden" name="choice" value="UploadFile">
+                                                <input type="hidden" name="id" class="id-class">
+                                                <input type="hidden" name="url" class="url-class">
+                                                <input type="hidden" name="date" class="date-class">
+                                                <div class="form-group"><label class="col-sm-2 control-label">标题</label>
+                                                    <div class="col-sm-10"><input type="text" name="title" value="123" class="form-control save-class">
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="type" value="FjRmjxAction">
+
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="form-group"><label class="col-sm-2 control-label">内容</label>
+                                                    <div class="col-sm-10 save-class">
+                                                        <div class="summernote">
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="hr-line-dashed"></div>
-                                                <div class="form-group"><label class="col-sm-2 control-label">标题</label>
-                                                    <div class="col-sm-10"><input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="hr-line-dashed"></div>
-                                                <div class="form-group"><label class="col-sm-2 control-label">内容</label>
+                                                <div class="form-group"><label class="col-sm-2 control-label">图片</label>
                                                     <div class="col-sm-10">
-                                                        <div class="summernote">
-                                                            <h3>Lorem Ipsum is simply</h3>
-                                                            dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
-                                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                                                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName"/></span>
+                                                            <span class="fileinput-filename"></span>
+                                                            <a href="#" class="close fileinput-exists"
+                                                               data-dismiss="fileinput" style="float: none">&times;</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <input type="hidden" class="save-class">
+
                                             </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
-                                            <button type="button" class="btn btn-primary">保存新增</button>
+                                            <input type="button" class="btn btn-primary" onclick="s2()" value="保存新增"/>
                                         </div>
 
                                     </div>
@@ -278,6 +280,7 @@
                                 <th class="text-center">序号</th>
                                 <th class="text-center" data-hide="phone">标题</th>
                                 <th class="text-center" data-hide="phone">图片</th>
+                                <th class="text-center" data-hide="phone">内容</th>
                                 <th class="text-center">操作</th>
 
                             </tr>
@@ -285,7 +288,7 @@
                             <tbody></tbody>
                             <tfoot>
                             <tr>
-                                <td colspan="4">
+                                <td colspan="5">
                                     <ul class="pagination pull-right"></ul>
                                 </td>
                             </tr>
