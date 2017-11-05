@@ -19,6 +19,7 @@ Date.prototype.format = function(fmt) {
     return fmt;
 }
 var date = new Date().format("yyyy-MM-dd hh:mm:ss");
+var timestamp = Date.parse(new Date());
 var u1 = "FjLbtAction";
 var u2 = "FjRmjxAction";
 var u3 = "FjJtdtAction";
@@ -141,19 +142,21 @@ function s1() {
     var si1 = $("#save1 .save-class:first").val();
     var si2 = $("#save1 .fileinput-filename:first").text();
     var id = $("#save1 .save-class:last").val();
-
-    var updatedate = $("#save1 .date-class").val(date);
+    var updatedate = $("#save1 .date-class").val(timestamp);
     if(id){
-        var url = "http://localhost:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
+        //var url = "http://localhost:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
+        $("#url1").val(window.location.href);
         document.getElementById("save1").submit();
     }else{
-        var url = "http://localhost:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
+        //var url = "http://localhost:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
+        $("#url1").val(window.location.href);
+       /* alert(window.location.href);*/
         document.getElementById("save1").submit();
     }
 
-    $.getJSON(url, function(data) {});
+   // $.getJSON(url, function(data) {});
 
-    window.location.reload();
+    //window.location.reload();
 }
 function s2() {
     var si1 = $("#save2 .save-class:first").val();
