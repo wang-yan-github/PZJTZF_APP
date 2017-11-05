@@ -61,7 +61,8 @@ $.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
         htmlText += "<tr>";
         htmlText += "<td>" + data[x].id +"</td>";
         htmlText += "<td width='30%'>" + data[x].title +"</td>";
-        htmlText += "<td>" + data[x].content.substring(0,10) +"</td>";
+        htmlText += "<td title='"+data[x].image+"'>" + data[x].image.substring(0,10) +"</td>";
+        htmlText += "<td title='"+data[x].content+"'>" + data[x].content.substring(0,10) +"</td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs' onclick='e2("+data[x].id+")' data-toggle='modal' data-target='#m2'>编辑</button> " +
             "<button type='button' class='btn-danger btn btn-xs' onclick='r2("+data[x].id+")'>删除</button> " +
@@ -139,38 +140,14 @@ $.getJSON("http://localhost:8080/API/"+u5+"?choice=list", function(data) {
 });
 // 添加
 function s1() {
-    var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .fileinput-filename:first").text();
-    var id = $("#save1 .save-class:last").val();
-    var updatedate = $("#save1 .date-class").val(timestamp);
-    if(id){
-        //var url = "http://localhost:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
-        $("#url1").val(window.location.href);
-        document.getElementById("save1").submit();
-    }else{
-        //var url = "http://localhost:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
-        $("#url1").val(window.location.href);
-       /* alert(window.location.href);*/
-        document.getElementById("save1").submit();
-    }
-
-   // $.getJSON(url, function(data) {});
-
-    //window.location.reload();
+    $("#save1 .date-class").val(timestamp);
+    $("#save1 .url-class").val(window.location.href);
+    document.getElementById("save1").submit();
 }
 function s2() {
-    var si1 = $("#save2 .save-class:first").val();
-    var si2 = $("#save2 .save-class:eq(1) .note-editable").text();
-    var id = $("#save2 .save-class:last").val();
-
-    if(id){
-        var url = "http://localhost:8080/API/"+u2+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
-    }else{
-        var url = "http://localhost:8080/API/"+u2+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
-    }
-
-    $.getJSON(url, function(data) {})
-    window.location.reload();
+    $("#save2 .date-class").val(timestamp);
+    $("#save2 .url-class").val(window.location.href);
+    document.getElementById("save2").submit();
 }
 function s3() {
     var si1 = $("#save3 .save-class:first").val();
@@ -201,18 +178,9 @@ function s4() {
     window.location.reload();
 }
 function s5() {
-    var si1 = $("#save5 .save-class:first").val();
-    var si2 = $("#save5 .save-class:eq(1) .note-editable").text();
-    var id = $("#save5 .save-class:last").val();
-
-    if(id){
-        var url = "http://localhost:8080/API/"+u5+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
-    }else{
-        var url = "http://localhost:8080/API/"+u5+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
-    }
-
-    $.getJSON(url, function(data) {})
-    window.location.reload();
+    $("#save5 .date-class").val(timestamp);
+    $("#save5 .url-class").val(window.location.href);
+    document.getElementById("save5").submit();
 }
 // 删除
 function r1(removeid) {
@@ -242,14 +210,13 @@ function r5(removeid) {
 }
 // 编辑
 function e1(editid){
-
     $.getJSON("http://localhost:8080/API/"+u1+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save1 .save-class:first").val(data[x].title);
-            $("#save1 .save-class:eq(1) .note-editable").text(data[x].content);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save1 .fileinput-filename:first").text(data[x].content);
+            $("#save1 .id-class").val(editid);
         }
     });
 }
@@ -259,8 +226,9 @@ function e2(editid){
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save2 .save-class:first").val(data[x].title);
-            $("#save2 .save-class:eq(1) .note-editable").text(data[x].content);
-            $("#save2 .save-class:last").val(data[x].id);
+            $("#save2 .save-class:eq(1)").val(data[x].content);
+            $("#save2 .fileinput-filename:first").text(data[x].image);
+            $("#save2 .id-class").val(editid);
         }
     });
 }
@@ -272,6 +240,7 @@ function e3(editid){
             $("#save3 .save-class:first").val(data[x].title);
             $("#save3 .save-class:eq(1) .note-editable").text(data[x].content);
             $("#save3 .save-class:last").val(data[x].id);
+            $("#save3 .save-id").val(data[x].id);
         }
     });
 }
@@ -283,6 +252,7 @@ function e4(editid){
             $("#save4 .save-class:first").val(data[x].title);
             $("#save4 .save-class:eq(1) .note-editable").text(data[x].content);
             $("#save4 .save-class:last").val(data[x].id);
+            $("#save4 .save-id").val(data[x].id);
         }
     });
 }
@@ -292,8 +262,8 @@ function e5(editid){
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save5 .save-class:first").val(data[x].title);
-            $("#save5 .save-class:eq(1) .note-editable").text(data[x].content);
-            $("#save5 .save-class:last").val(data[x].id);
+            $("#save5 .fileinput-filename:first").text(data[x].content);
+            $("#save5 .id-class").val(editid);
         }
     });
 }
