@@ -24,8 +24,9 @@ var u2 = "FjRmjxAction";
 var u3 = "FjJtdtAction";
 var u4 = "FjYqljAction";
 var u5 = "FjQdymAction";
+var upload = "UploadAction";
 // 列表
-$.getJSON("http://60.205.186.12:8080/API/"+u1+"?choice=list", function(data) {
+$.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
     $("#table1 tbody").html(""); //清空
     var htmlText = "";
 
@@ -47,7 +48,7 @@ $.getJSON("http://60.205.186.12:8080/API/"+u1+"?choice=list", function(data) {
 
     $("#table1 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/"+u2+"?choice=list", function(data) {
+$.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
     $("#table2 tbody").html(""); //清空
     var htmlText = "";
 
@@ -69,7 +70,7 @@ $.getJSON("http://60.205.186.12:8080/API/"+u2+"?choice=list", function(data) {
 
     $("#table2 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/"+u3+"?choice=list", function(data) {
+$.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
     $("#table3 tbody").html(""); //清空
     var htmlText = "";
 
@@ -91,7 +92,7 @@ $.getJSON("http://60.205.186.12:8080/API/"+u3+"?choice=list", function(data) {
 
     $("#table3 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/"+u4+"?choice=list", function(data) {
+$.getJSON("http://localhost:8080/API/"+u4+"?choice=list", function(data) {
     $("#table4 tbody").html(""); //清空
     var htmlText = "";
 
@@ -113,7 +114,7 @@ $.getJSON("http://60.205.186.12:8080/API/"+u4+"?choice=list", function(data) {
 
     $("#table4 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/"+u5+"?choice=list", function(data) {
+$.getJSON("http://localhost:8080/API/"+u5+"?choice=list", function(data) {
     $("#table5 tbody").html(""); //清空
     var htmlText = "";
 
@@ -138,17 +139,21 @@ $.getJSON("http://60.205.186.12:8080/API/"+u5+"?choice=list", function(data) {
 // 添加
 function s1() {
     var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
+    var si2 = $("#save1 .fileinput-filename:first").text();
     var id = $("#save1 .save-class:last").val();
 
+    var updatedate = $("#save1 .date-class").val(date);
     if(id){
-        var url = "http://60.205.186.12:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
+        document.getElementById("save1").submit();
     }else{
-        var url = "http://60.205.186.12:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+updatedate+"&person=管理员";
+        document.getElementById("save1").submit();
     }
 
     $.getJSON(url, function(data) {});
-    window.location.reload();
+
+    //window.location.reload();
 }
 function s2() {
     var si1 = $("#save2 .save-class:first").val();
@@ -156,9 +161,9 @@ function s2() {
     var id = $("#save2 .save-class:last").val();
 
     if(id){
-        var url = "http://60.205.186.12:8080/API/"+u2+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u2+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }else{
-        var url = "http://60.205.186.12:8080/API/"+u2+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u2+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }
 
     $.getJSON(url, function(data) {})
@@ -170,9 +175,9 @@ function s3() {
     var id = $("#save3 .save-class:last").val();
 
     if(id){
-        var url = "http://60.205.186.12:8080/API/"+u3+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u3+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }else{
-        var url = "http://60.205.186.12:8080/API/"+u3+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u3+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }
 
     $.getJSON(url, function(data) {})
@@ -184,9 +189,9 @@ function s4() {
     var id = $("#save4 .save-class:last").val();
 
     if(id){
-        var url = "http://60.205.186.12:8080/API/"+u4+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u4+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }else{
-        var url = "http://60.205.186.12:8080/API/"+u4+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u4+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }
 
     $.getJSON(url, function(data) {})
@@ -198,9 +203,9 @@ function s5() {
     var id = $("#save5 .save-class:last").val();
 
     if(id){
-        var url = "http://60.205.186.12:8080/API/"+u5+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u5+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }else{
-        var url = "http://60.205.186.12:8080/API/"+u5+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        var url = "http://localhost:8080/API/"+u5+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
     }
 
     $.getJSON(url, function(data) {})
@@ -208,34 +213,34 @@ function s5() {
 }
 // 删除
 function r1(removeid) {
-    var url = "http://60.205.186.12:8080/API/"+u1+"?choice=remove&id="+removeid+"";
+    var url = "http://localhost:8080/API/"+u1+"?choice=remove&id="+removeid+"";
     $.getJSON(url, function(data) {});
     window.location.reload();
 }
 function r2(removeid) {
-    var url = "http://60.205.186.12:8080/API/"+u2+"?choice=remove&id="+removeid+"";
+    var url = "http://localhost:8080/API/"+u2+"?choice=remove&id="+removeid+"";
     $.getJSON(url, function(data) {});
     window.location.reload();
 }
 function r3(removeid) {
-    var url = "http://60.205.186.12:8080/API/"+u3+"?choice=remove&id="+removeid+"";
+    var url = "http://localhost:8080/API/"+u3+"?choice=remove&id="+removeid+"";
     $.getJSON(url, function(data) {});
     window.location.reload();
 }
 function r4(removeid) {
-    var url = "http://60.205.186.12:8080/API/"+u4+"?choice=remove&id="+removeid+"";
+    var url = "http://localhost:8080/API/"+u4+"?choice=remove&id="+removeid+"";
     $.getJSON(url, function(data) {});
     window.location.reload();
 }
 function r5(removeid) {
-    var url = "http://60.205.186.12:8080/API/"+u5+"?choice=remove&id="+removeid+"";
+    var url = "http://localhost:8080/API/"+u5+"?choice=remove&id="+removeid+"";
     $.getJSON(url, function(data) {});
     window.location.reload();
 }
 // 编辑
 function e1(editid){
 
-    $.getJSON("http://60.205.186.12:8080/API/"+u1+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://localhost:8080/API/"+u1+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
@@ -246,7 +251,7 @@ function e1(editid){
     });
 }
 function e2(editid){
-    $.getJSON("http://60.205.186.12:8080/API/"+u2+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://localhost:8080/API/"+u2+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
@@ -257,7 +262,7 @@ function e2(editid){
     });
 }
 function e3(editid){
-    $.getJSON("http://60.205.186.12:8080/API/"+u3+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://localhost:8080/API/"+u3+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
@@ -268,7 +273,7 @@ function e3(editid){
     });
 }
 function e4(editid){
-    $.getJSON("http://60.205.186.12:8080/API/"+u4+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://localhost:8080/API/"+u4+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
@@ -279,7 +284,7 @@ function e4(editid){
     });
 }
 function e5(editid){
-    $.getJSON("http://60.205.186.12:8080/API/"+u5+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://localhost:8080/API/"+u5+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
