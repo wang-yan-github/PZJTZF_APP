@@ -252,7 +252,7 @@ function s2() {
     var si3 = $("#save2 .save-class:eq(2)").val();
     var si4 = $("#save2 .save-class:eq(3)").val();
     var si5 = $("#save2 .save-class:eq(4)").val();
-    var id = $("#save1 .save-class:last").val();
+    var id = $("#save2 .save-class:last").val();
 
     if(id){
         var url = "http://60.205.186.12:8080/API/"+u2+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
@@ -269,7 +269,7 @@ function s3() {
     var si3 = $("#save3 .save-class:eq(2)").val();
     var si4 = $("#save3 .save-class:eq(3)").val();
     var si5 = $("#save3 .save-class:eq(4)").val();
-    var id = $("#save1 .save-class:last").val();
+    var id = $("#save3 .save-class:last").val();
 
     if(id){
         var url = "http://60.205.186.12:8080/API/"+u3+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
@@ -286,7 +286,7 @@ function s4() {
     var si3 = $("#save4 .save-class:eq(2)").val();
     var si4 = $("#save4 .save-class:eq(3)").val();
     var si5 = $("#save4 .save-class:eq(4)").val();
-    var id = $("#save1 .save-class:last").val();
+    var id = $("#save4 .save-class:last").val();
 
     if(id){
         var url = "http://60.205.186.12:8080/API/"+u4+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
@@ -303,7 +303,7 @@ function s5() {
     var si3 = $("#save5 .save-class:eq(2)").val();
     var si4 = $("#save5 .save-class:eq(3)").val();
     var si5 = $("#save5 .save-class:eq(4)").val();
-    var id = $("#save1 .save-class:last").val();
+    var id = $("#save5 .save-class:last").val();
 
     if(id){
         var url = "http://60.205.186.12:8080/API/"+u5+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
@@ -320,7 +320,7 @@ function s6() {
     var si3 = $("#save6 .save-class:eq(2)").val();
     var si4 = $("#save6 .save-class:eq(3)").val();
     var si5 = $("#save6 .save-class:eq(4)").val();
-    var id = $("#save1 .save-class:last").val();
+    var id = $("#save6 .save-class:last").val();
 
     if(id){
         var url = "http://60.205.186.12:8080/API/"+u6+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
@@ -334,9 +334,9 @@ function s7() {
     var si1 = $("#save7 .save-class:first").val();
     var si2 = $("#save7 .save-class:eq(1) .note-editable").text();
     var si3 = $("#save7 .save-class:eq(2)").val();
-    var si4 = $("#save7.save-class:eq(3)").val();
+    var si4 = $("#save7 .save-class:eq(3)").val();
     var si5 = $("#save7 .save-class:eq(4)").val();
-    var id = $("#save1 .save-class:last").val();
+    var id = $("#save7 .save-class:last").val();
 
     if(id){
         var url = "http://60.205.186.12:8080/API/"+u7+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
@@ -353,7 +353,7 @@ function s8() {
     var si3 = $("#save8 .save-class:eq(2)").val();
     var si4 = $("#save8 .save-class:eq(3)").val();
     var si5 = $("#save8 .save-class:eq(4)").val();
-    var id = $("#save1 .save-class:last").val();
+    var id = $("#save8 .save-class:last").val();
 
     if(id){
         var url = "http://60.205.186.12:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员&department="+si3+"&quality="+si4+"&people="+si5+"";
@@ -436,7 +436,7 @@ function e2(editid){
             $("#save2 .save-class:eq(2)").val(data[x].department);
             $("#save2 .save-class:eq(3)").val(data[x].quality);
             $("#save2 .save-class:eq(4)").val(data[x].people);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save2 .save-class:last").val(data[x].id);
         }
     });
 }
@@ -450,7 +450,7 @@ function e3(editid){
             $("#save3 .save-class:eq(2)").val(data[x].department);
             $("#save3 .save-class:eq(3)").val(data[x].quality);
             $("#save3 .save-class:eq(4)").val(data[x].people);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save3 .save-class:last").val(data[x].id);
         }
     });
 }
@@ -464,7 +464,7 @@ function e4(editid){
             $("#save4 .save-class:eq(2)").val(data[x].department);
             $("#save4 .save-class:eq(3)").val(data[x].quality);
             $("#save4 .save-class:eq(4)").val(data[x].people);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save4 .save-class:last").val(data[x].id);
         }
     });
 }
@@ -478,7 +478,7 @@ function e5(editid){
             $("#save5 .save-class:eq(2)").val(data[x].department);
             $("#save5 .save-class:eq(3)").val(data[x].quality);
             $("#save5 .save-class:eq(4)").val(data[x].people);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save5 .save-class:last").val(data[x].id);
         }
     });
 }
@@ -492,7 +492,7 @@ function e6(editid){
             $("#save6 .save-class:eq(2)").val(data[x].department);
             $("#save6 .save-class:eq(3)").val(data[x].quality);
             $("#save6 .save-class:eq(4)").val(data[x].people);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save6 .save-class:last").val(data[x].id);
         }
     });
 }
@@ -506,7 +506,7 @@ function e7(editid){
             $("#save7 .save-class:eq(2)").val(data[x].department);
             $("#save7 .save-class:eq(3)").val(data[x].quality);
             $("#save7 .save-class:eq(4)").val(data[x].people);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save7 .save-class:last").val(data[x].id);
         }
     });
 }
@@ -520,7 +520,7 @@ function e8(editid){
             $("#save8 .save-class:eq(2)").val(data[x].department);
             $("#save8 .save-class:eq(3)").val(data[x].quality);
             $("#save8 .save-class:eq(4)").val(data[x].people);
-            $("#save1 .save-class:last").val(data[x].id);
+            $("#save8 .save-class:last").val(data[x].id);
         }
     });
 }
