@@ -153,7 +153,7 @@ function s1() {
 
     $.getJSON(url, function(data) {});
 
-    //window.location.reload();
+    window.location.reload();
 }
 function s2() {
     var si1 = $("#save2 .save-class:first").val();
