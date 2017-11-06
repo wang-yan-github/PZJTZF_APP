@@ -6,6 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP 后台管理</title>
+    <script>
+        if(sessionStorage.getItem("user") === null){
+            window.location="login.html";
+        }
+    </script>
 
     <script src="js/api/jquery-1.9.1.min.js"></script>
     <script src="js/api/PZ_liuliangfx.js"></script>
@@ -29,8 +34,11 @@
                             <img alt="image" class="img-circle" src="img/profile_small.jpg" />
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">张辉</strong>
-                             </span> <span class="text-muted text-xs block">管理员 <b class="caret"></b></span> </span> </a>
+                            <span class="clear">
+                                <span class="block m-t-xs" id="userprofile">
+                                <strong class="font-bold" >admin</strong>
+                             </span>
+                                <span class="text-muted text-xs block">管理员 <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="login.html">登出</a></li>
                         </ul>
