@@ -1,61 +1,88 @@
-$.getJSON("http://60.205.186.12:8080/API/GxzdZfgsAction?choice=GxzdZfgsList", function(data) {
-    $("#table1 tbody").html(""); //清空
-    var htmlText = "<tr>";
+Date.prototype.format = function(fmt) {
+    var o = {
+        "M+" : this.getMonth()+1,                 //月份
+        "d+" : this.getDate(),                    //日
+        "h+" : this.getHours(),                   //小时
+        "m+" : this.getMinutes(),                 //分
+        "s+" : this.getSeconds(),                 //秒
+        "q+" : Math.floor((this.getMonth()+3)/3), //季度
+        "S"  : this.getMilliseconds()             //毫秒
+    };
+    if(/(y+)/.test(fmt)) {
+        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    }
+    for(var k in o) {
+        if(new RegExp("("+ k +")").test(fmt)){
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        }
+    }
+    return fmt;
+}
+var date = new Date().format("yyyy-MM-dd hh:mm:ss");
+var timestamp = Date.parse(new Date());
+var u1 = "BslcXklcAction";
+var u2 = "BslcCflcAction";
+var u3 = "BslcZzlcAction";
+var u4 = "BslcJclcAction";
+// 列表
+$.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
     //for in循环
     for(x in data){
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
-        console.log(data[x].name);
-        console.log(data[x].content);
-        htmlText += "<td>" + data[x].id +"</td>";
-        htmlText += "<td width='30%'>" + data[x].name +"</td>";
-        htmlText += "<td>" + data[x].content.substring(0,30) +"...<a href='http://60.205.186.12:8080/API/GxzdZfgsAction?choice=ByldGxzdZfgs&Id="+data[x].id+"'>详细</a></td>";
-        htmlText += "<td> <div class='btn-group'> " +
-            "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
-            "</div> </td>";
+        $("#save1 .id-class").text(data[x].id);
+        $("#save1 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
-    htmlText += "</tr>";
-    $("#table1 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/GxzdCwgkAction?choice=GxzdCwgkList", function(data) {
-    $("#table2 tbody").html(""); //清空
-    var htmlText = "<tr>";
+$.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
     //for in循环
     for(x in data){
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
-        console.log(data[x].name);
-        console.log(data[x].content);
-        htmlText += "<td>" + data[x].id +"</td>";
-        htmlText += "<td width='30%'>" + data[x].name +"</td>";
-        htmlText += "<td>" + data[x].content.substring(0,30) +"...<a href='http://60.205.186.12:8080/API/GxzdCwgkAction?choice=ByldGxzdCwgk&Id="+data[x].id+"'>详细</a></td>";
-        htmlText += "<td> <div class='btn-group'> " +
-            "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
-            "</div> </td>";
+        $("#save2 .id-class").text(data[x].id);
+        $("#save2 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
-    htmlText += "</tr>";
-    $("#table2 tbody").html(htmlText);
 });
-$.getJSON("http://60.205.186.12:8080/API/GxzdSsfaAction?choice=GxzdSsfaList", function(data) {
-    $("#table3 tbody").html(""); //清空
-    var htmlText = "<tr>";
+$.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
     //for in循环
     for(x in data){
+        $("#save3 .id-class").text(data[x].id);
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
-        console.log(data[x].name);
-        console.log(data[x].content);
-        htmlText += "<td>" + data[x].id +"</td>";
-        htmlText += "<td width='30%'>" + data[x].name +"</td>";
-        htmlText += "<td>" + data[x].content.substring(0,30) +"...<a href='http://60.205.186.12:8080/API/GxzdSsfaAction?choice=ByldGxzdSsfa&Id="+data[x].id+"'>详细</a></td>";
-        htmlText += "<td> <div class='btn-group'> " +
-            "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
-            "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
-            "</div> </td>";
+        $("#save3 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
-    htmlText += "</tr>";
-    $("#table3 tbody").html(htmlText);
 });
-
-$("#b01").click(
-
-);
+$.getJSON("http://localhost:8080/API/"+u4+"?choice=list", function(data) {
+    //for in循环
+    for(x in data){
+        $("#save4 .id-class").text(data[x].id);
+        //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
+        $("#save4 .fileinput-filename:first").text(data[x].content.substring(0,35));
+    }
+});
+//保存
+function s1() {
+    if($("#save1 .file-class").val()){
+        $("#save1 .date-class").val(timestamp);
+        $("#save1 .url-class").val(window.location.href);
+        document.getElementById("save1").submit();
+    }
+}
+function s2() {
+    if($("#save2 .file-class").val()){
+        $("#save2 .date-class").val(timestamp);
+        $("#save2 .url-class").val(window.location.href);
+        document.getElementById("save2").submit();
+    }
+}
+function s3() {
+    if($("#save3 .file-class").val()){
+        $("#save3 .date-class").val(timestamp);
+        $("#save3 .url-class").val(window.location.href);
+        document.getElementById("save3").submit();
+    }
+}
+function s4() {
+    if($("#save4 .file-class").val()){
+        $("#save4 .date-class").val(timestamp);
+        $("#save4 .url-class").val(window.location.href);
+        document.getElementById("save4").submit();
+    }
+}

@@ -12,16 +12,15 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
 
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
 
-    <!--dropzone-->
-    <link href="css/plugins/dropzone/basic.css" rel="stylesheet">
-    <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
-
-    <!-- Sweet Alert -->
-    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
 </head>
 
 <body class="">
@@ -115,100 +114,158 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-3">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>行政许可流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form action="#" class="dropzone" id="dropzoneForm">
-                            <div class="fallback">
-                                <input name="file" type="file" multiple />
+                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save1">
+                            <input type="hidden" name="choice" value="UploadFile">
+                            <input type="hidden" name="id" class="id-class">
+                            <input type="hidden" name="url" class="url-class">
+                            <input type="hidden" name="date" class="date-class">
+                            <input type="hidden" name="title" value="" class="form-control save-class">
+                            <input type="hidden" name="type" value="BslcXklcAction">
+
+                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                <div class="col-sm-10">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists"
+                                           data-dismiss="fileinput" style="float: none">&times;</a>
+                                    </div>
+                                </div>
                             </div>
+                            <input type="hidden" class="save-class">
+
                         </form>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2">更新</button>
+                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s1()">更新</button>
 
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-3">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>行政处罚流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form action="#" class="dropzone" id="dropzoneForm1">
-                            <div class="fallback">
-                                <input name="file" type="file" multiple />
+                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save2">
+                            <input type="hidden" name="choice" value="UploadFile">
+                            <input type="hidden" name="id" class="id-class">
+                            <input type="hidden" name="url" class="url-class">
+                            <input type="hidden" name="date" class="date-class">
+                            <input type="hidden" name="title" value="" class="form-control save-class">
+                            <input type="hidden" name="type" value="BslcCflcAction">
+
+                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                <div class="col-sm-10">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists"
+                                           data-dismiss="fileinput" style="float: none">&times;</a>
+                                    </div>
+                                </div>
                             </div>
+                            <input type="hidden" class="save-class">
+
                         </form>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2">更新</button>
+                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s2()">更新</button>
 
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-3">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>行政强制流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form action="#" class="dropzone" id="dropzoneForm2">
-                            <div class="fallback">
-                                <input name="file" type="file" multiple />
+                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save3">
+                            <input type="hidden" name="choice" value="UploadFile">
+                            <input type="hidden" name="id" class="id-class">
+                            <input type="hidden" name="url" class="url-class">
+                            <input type="hidden" name="date" class="date-class">
+                            <input type="hidden" name="title" value="" class="form-control save-class">
+                            <input type="hidden" name="type" value="BslcZzlcAction">
+
+                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                <div class="col-sm-10">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists"
+                                           data-dismiss="fileinput" style="float: none">&times;</a>
+                                    </div>
+                                </div>
                             </div>
+                            <input type="hidden" class="save-class">
+
                         </form>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2">更新</button>
+                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s3()">更新</button>
 
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-3">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>行政监察流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form action="#" class="dropzone" id="dropzoneForm3">
-                            <div class="fallback">
-                                <input name="file" type="file" multiple />
+                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save4">
+                            <input type="hidden" name="choice" value="UploadFile">
+                            <input type="hidden" name="id" class="id-class">
+                            <input type="hidden" name="url" class="url-class">
+                            <input type="hidden" name="date" class="date-class">
+                            <input type="hidden" name="title" value="" class="form-control save-class">
+                            <input type="hidden" name="type" value="BslcJclcAction">
+
+                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                <div class="col-sm-10">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists"
+                                           data-dismiss="fileinput" style="float: none">&times;</a>
+                                    </div>
+                                </div>
                             </div>
+                            <input type="hidden" class="save-class">
+
                         </form>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2">更新</button>
+                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s4()">更新</button>
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
 
     </div>
 </div>
@@ -224,50 +281,34 @@
 <script src="js/inspinia.js"></script>
 <script src="js/plugins/pace/pace.min.js"></script>
 
-<!-- DROPZONE -->
-<script src="js/plugins/dropzone/dropzone.js"></script>
+<!-- FooTable -->
+<script src="js/plugins/footable/footable.all.min.js"></script>
 
-<!-- Sweet alert -->
-<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+<!-- Jasny -->
+<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+<!-- SUMMERNOTE -->
+<script src="js/plugins/summernote/summernote.min.js"></script>
 
 <!-- Page-Level Scripts -->
 <script>
-    Dropzone.options.dropzoneForm = {
-        url: "http://localhost:8080/API/UploadAction",
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 6, // MB
-        dictDefaultMessage: "<strong>请上传行政许可流程图 </strong></br> (图片大小不超过6M)"
-    };
+    $(document).ready(function() {
 
-    Dropzone.options.dropzoneForm1 = {
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 6, // MB
-        dictDefaultMessage: "<strong>请上传行政处罚流程图 </strong></br> (图片大小不超过6M)"
-    };
+        $('.footable').footable();
+        $('.footable2').footable();
+        $('.summernote').summernote({
+            toolbar: [
 
-    Dropzone.options.dropzoneForm2 = {
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 6, // MB
-        dictDefaultMessage: "<strong>请上传行政强制流程图 </strong></br> (图片大小不超过6M)"
-    };
-
-    Dropzone.options.dropzoneForm3 = {
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 6, // MB
-        dictDefaultMessage: "<strong>请上传行政监察流程图 </strong></br> (图片大小不超过6M)"
-    };
-
-
-    $(document).ready(function () {
-
-        $('.demo2').click(function(){
-            swal({
-                title: "更新",
-                text: "更新成功",
-                type: "success"
-            });
+            ],
+            height: 300,
+            focus: true,
+            maxHeight: null,
+            minHeight: null,
         });
+
     });
+
 </script>
 
 
