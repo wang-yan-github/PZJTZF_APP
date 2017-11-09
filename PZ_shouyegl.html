@@ -125,7 +125,7 @@
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                            data-target="#m1">新增轮播图
+                                            data-target="#m1" onclick="removeValue(1)">新增轮播图
                                     </button>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@
                                             <button type="button" class="close" data-dismiss="modal"><span
                                                     aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                                             </button>
-                                            <h4 class="modal-title">新增轮播图</h4>
+                                            <h4 class="modal-title">轮播图</h4>
                                         </div>
                                         <div class="modal-body">
                                             <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://47.94.92.201:8080/API/UploadAction" id="save1">
@@ -214,7 +214,7 @@
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                            data-target="#m2">新增热门精选
+                                            data-target="#m2" onclick="removeValue(2)">新增热门精选
                                     </button>
                                 </div>
                                 <div class="modal inmodal" id="m2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -339,7 +339,7 @@
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                            data-target="#m3">新增交通动态
+                                            data-target="#m3" onclick="removeValue(3)">新增交通动态
                                     </button>
                                 </div>
                                 <div class="modal inmodal" id="m3" tabindex="-1" role="dialog" aria-hidden="true">
@@ -415,7 +415,7 @@
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                            data-target="#m4">新增友情链接
+                                            data-target="#m4" onclick="removeValue(4)">友情链接
                                     </button>
                                 </div>
                             </div>
@@ -444,7 +444,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
-                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="s4()">保存</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="s4()">保存新增</button>
                                         </div>
 
                                     </div>
@@ -490,7 +490,7 @@
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-primary " data-toggle="modal"
-                                            data-target="#m5">新增启动页面
+                                            data-target="#m5" onclick="removeValue(5)">新增启动页面
                                     </button>
                                 </div>
                                 <div class="modal inmodal" id="m5" tabindex="-1" role="dialog" aria-hidden="true">
@@ -500,7 +500,7 @@
                                                 <button type="button" class="close" data-dismiss="modal"><span
                                                         aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                                                 </button>
-                                                <h4 class="modal-title">新建启动页面</h4>
+                                                <h4 class="modal-title">启动页面</h4>
                                             </div>
                                             <div class="modal-body">
                                                 <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://47.94.92.201:8080/API/UploadAction" id="save5">
