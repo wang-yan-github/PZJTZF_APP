@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP 后台管理</title>
     <script>
-        if(sessionStorage.getItem("user") === null){
+        /*if(sessionStorage.getItem("user") === null){
             window.location="login.html";
-        }
+        }*/
     </script>
     <script src="js/api/jquery-1.9.1.min.js"></script>
     <script src="js/api/PZ_banshilc.js"></script>
@@ -123,8 +123,8 @@
                     </div>
                     <div class="ibox-content">
                         <div class="lightBoxGallery">
-                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
-                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            <a id="image1"href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img id="image11" style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
                             </a>
                             <div id="blueimp-gallery" class="blueimp-gallery">
                                 <div class="slides"></div>
@@ -157,14 +157,16 @@
                                     <input type="hidden" name="id" class="id-class">
                                     <input type="hidden" name="url" class="url-class">
                                     <input type="hidden" name="date" class="date-class">
-                                    <input type="hidden" name="type" value="FjLbtAction">
-                                    <div class="form-group"><label class="col-sm-2 control-label">行政许可流程图</label>
+                                    <input type="hidden" name="title" value="" class="form-control save-class">
+                                    <input type="hidden" name="type" value="BslcXklcAction">
+
+                                    <div class="form-group"><label class="col-sm-2 control-label">图片</label>
                                         <div class="col-sm-10">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                <span class="btn btn-default btn-file"><span
-                                                        class="fileinput-new">添加图片</span><span
-                                                        class="fileinput-exists">Change</span>
-                                                    <input type="file" name="fileName"/></span>
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
                                                 <span class="fileinput-filename"></span>
                                                 <a href="#" class="close fileinput-exists"
                                                    data-dismiss="fileinput" style="float: none">&times;</a>
@@ -191,12 +193,56 @@
                     </div>
                     <div class="ibox-content">
                         <div class="lightBoxGallery">
-                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
-                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            <a id="image2" href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img id="image22" style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
                             </a>
                         </div>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2">更换</button>
+                            <button type="button" class="pull-right btn btn-primary demo2"data-toggle="modal"
+                                    data-target="#m2">更换</button>
+                        </div>
+                        <div class="modal inmodal" id="m2" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span
+                                                aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title">更换流程图</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://47.94.92.201:8080/API/UploadAction" id="save2">
+                                            <input type="hidden" name="choice" value="UploadFile">
+                                            <input type="hidden" name="id" class="id-class">
+                                            <input type="hidden" name="url" class="url-class">
+                                            <input type="hidden" name="date" class="date-class">
+                                            <input type="hidden" name="title" value="" class="form-control save-class">
+                                            <input type="hidden" name="type" value="BslcCflcAction">
+
+                                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                                <div class="col-sm-10">
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
+                                                        <span class="fileinput-filename"></span>
+                                                        <a href="#" class="close fileinput-exists"
+                                                           data-dismiss="fileinput" style="float: none">&times;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="save-class">
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                                        <input type="button" class="btn btn-primary" onclick="s2()" value="提交"/>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,12 +254,56 @@
                     </div>
                     <div class="ibox-content">
                         <div class="lightBoxGallery">
-                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
-                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            <a id="image3" href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img id="image33" style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
                             </a>
                         </div>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2">更换</button>
+                            <button type="button" class="pull-right btn btn-primary demo2" data-toggle="modal"
+                                    data-target="#m3">更换</button>
+                        </div>
+                        <div class="modal inmodal" id="m3" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span
+                                                aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title">更换流程图</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://47.94.92.201:8080/API/UploadAction" id="save3">
+                                            <input type="hidden" name="choice" value="UploadFile">
+                                            <input type="hidden" name="id" class="id-class">
+                                            <input type="hidden" name="url" class="url-class">
+                                            <input type="hidden" name="date" class="date-class">
+                                            <input type="hidden" name="title" value="" class="form-control save-class">
+                                            <input type="hidden" name="type" value="BslcZzlcAction">
+
+                                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                                <div class="col-sm-10">
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
+                                                        <span class="fileinput-filename"></span>
+                                                        <a href="#" class="close fileinput-exists"
+                                                           data-dismiss="fileinput" style="float: none">&times;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="save-class">
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                                        <input type="button" class="btn btn-primary" onclick="s3()" value="提交"/>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -225,12 +315,56 @@
                     </div>
                     <div class="ibox-content">
                         <div class="lightBoxGallery">
-                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
-                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            <a id="image4" href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img id="image44" style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
                             </a>
                         </div>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2">更换</button>
+                            <button type="button" class="pull-right btn btn-primary demo2" data-toggle="modal"
+                                    data-target="#m4">更换</button>
+                        </div>
+                        <div class="modal inmodal" id="m4" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span
+                                                aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title">更换流程图</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://47.94.92.201:8080/API/UploadAction" id="save4">
+                                            <input type="hidden" name="choice" value="UploadFile">
+                                            <input type="hidden" name="id" class="id-class">
+                                            <input type="hidden" name="url" class="url-class">
+                                            <input type="hidden" name="date" class="date-class">
+                                            <input type="hidden" name="title" value="" class="form-control save-class">
+                                            <input type="hidden" name="type" value="BslcJclcAction">
+
+                                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
+                                                <div class="col-sm-10">
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <span class="btn btn-default btn-file"><span
+                                                                    class="fileinput-new">添加图片</span><span
+                                                                    class="fileinput-exists">Change</span>
+                                                                <input type="file" name="fileName" class="file-class"/></span>
+                                                        <span class="fileinput-filename"></span>
+                                                        <a href="#" class="close fileinput-exists"
+                                                           data-dismiss="fileinput" style="float: none">&times;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" class="save-class">
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                                        <input type="button" class="btn btn-primary" onclick="s4()" value="提交"/>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

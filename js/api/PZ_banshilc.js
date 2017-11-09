@@ -28,23 +28,29 @@ var u4 = "BslcJclcAction";
 $.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=list", function(data) {
     //for in循环
     for(x in data){
+        document.getElementById("image1").setAttribute("href",data[x].content);
+        document.getElementById("image11").setAttribute("src",data[x].content);
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
-        $("#save1 .id-class").text(data[x].id);
+        $("#save1 .id-class").val(data[x].id);
         $("#save1 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
 });
 $.getJSON("http://47.94.92.201:8080/API/"+u2+"?choice=list", function(data) {
     //for in循环
     for(x in data){
+        document.getElementById("image2").setAttribute("href",data[x].content);
+        document.getElementById("image22").setAttribute("src",data[x].content);
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
-        $("#save2 .id-class").text(data[x].id);
+        $("#save2 .id-class").val(data[x].id);
         $("#save2 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
 });
 $.getJSON("http://47.94.92.201:8080/API/"+u3+"?choice=list", function(data) {
     //for in循环
     for(x in data){
-        $("#save3 .id-class").text(data[x].id);
+        document.getElementById("image3").setAttribute("href",data[x].content);
+        document.getElementById("image33").setAttribute("src",data[x].content);
+        $("#save3 .id-class").val(data[x].id);
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
         $("#save3 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
@@ -52,7 +58,9 @@ $.getJSON("http://47.94.92.201:8080/API/"+u3+"?choice=list", function(data) {
 $.getJSON("http://47.94.92.201:8080/API/"+u4+"?choice=list", function(data) {
     //for in循环
     for(x in data){
-        $("#save4 .id-class").text(data[x].id);
+        document.getElementById("image4").setAttribute("href",data[x].content);
+        document.getElementById("image44").setAttribute("src",data[x].content);
+        $("#save4 .id-class").val(data[x].id);
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
         $("#save4 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
