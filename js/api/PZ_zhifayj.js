@@ -27,6 +27,12 @@ var u5 = "ZtyjDfhscAction";
 var u6 = "ZtyjHdglzAction";
 var u7 = "ZtyjGkglcAction";
 var u8 = "ZtyjJtgczlAction";
+// 清空
+function removeValue(id){
+    $("#save" + id + " .save-class:first").val("");
+    $("#save" + id + " .save-class:eq(1) .note-editable").html("");
+    $("#save" + id + " .save-class:last").val("");
+}
 // 列表
 $.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=list", function(data) {
     $("#table1 tbody").html(""); //清空
