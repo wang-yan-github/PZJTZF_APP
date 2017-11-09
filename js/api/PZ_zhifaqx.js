@@ -23,7 +23,7 @@ var u1 = "ZfqxQlsxAction";
 var u2 = "ZfqxZrsxAction";
 var u3 = "ZfqxJcsxAction";
 // 列表
-$.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=list", function(data) {
     $("#table1 tbody").html(""); //清空
     var htmlText = "";
 
@@ -45,7 +45,7 @@ $.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
 
     $("#table1 tbody").html(htmlText);
 });
-$.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u2+"?choice=list", function(data) {
     $("#table2 tbody").html(""); //清空
     var htmlText = "";
 
@@ -67,7 +67,7 @@ $.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
 
     $("#table2 tbody").html(htmlText);
 });
-$.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u3+"?choice=list", function(data) {
     $("#table3 tbody").html(""); //清空
     var htmlText = "";
 
@@ -92,93 +92,108 @@ $.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
 // 添加
 function s1() {
     var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
+    var si2 = $("#save1 .save-class:eq(1) .note-editable").html();
     var id = $("#save1 .save-class:last").val();
+    var url = "http://47.94.92.201:8080/API/"+u1;
+    var params;
 
     if(id){
-        var url = "http://localhost:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'update',id:id,title:si1,content:si2,date:date,person:'管理员'};
     }else{
-        var url = "http://localhost:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'save',title:si1,content:si2,date:date,person:'管理员'};
     }
 
-    $.getJSON(url, function(data) {});
-    window.location.reload();
+    //$.getJSON(url, function(data) {});
+    $.post(url,params,function(){
+        window.location.reload();
+    });
 }
 function s2() {
     var si1 = $("#save2 .save-class:first").val();
-    var si2 = $("#save2 .save-class:eq(1) .note-editable").text();
+    var si2 = $("#save2 .save-class:eq(1) .note-editable").html();
     var id = $("#save2 .save-class:last").val();
+    var url = "http://47.94.92.201:8080/API/"+u2;
+    var params;
 
     if(id){
-        var url = "http://localhost:8080/API/"+u2+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'update',id:id,title:si1,content:si2,date:date,person:'管理员'};
     }else{
-        var url = "http://localhost:8080/API/"+u2+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'save',title:si1,content:si2,date:date,person:'管理员'};
     }
 
-    $.getJSON(url, function(data) {})
-    window.location.reload();
+    //$.getJSON(url, function(data) {});
+    $.post(url,params,function(){
+        window.location.reload();
+    });
 }
 function s3() {
     var si1 = $("#save3 .save-class:first").val();
-    var si2 = $("#save3 .save-class:eq(1) .note-editable").text();
+    var si2 = $("#save3 .save-class:eq(1) .note-editable").html();
     var id = $("#save3 .save-class:last").val();
+    var url = "http://47.94.92.201:8080/API/"+u3;
+    var params;
 
     if(id){
-        var url = "http://localhost:8080/API/"+u3+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'update',id:id,title:si1,content:si2,date:date,person:'管理员'};
     }else{
-        var url = "http://localhost:8080/API/"+u3+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'save',title:si1,content:si2,date:date,person:'管理员'};
     }
 
-    $.getJSON(url, function(data) {})
-    window.location.reload();
+    //$.getJSON(url, function(data) {});
+    $.post(url,params,function(){
+        window.location.reload();
+    });
 }
 // 删除
 function r1(removeid) {
-    var url = "http://localhost:8080/API/"+u1+"?choice=remove&id="+removeid+"";
-    $.getJSON(url, function(data) {});
-    window.location.reload();
+    var url = "http://47.94.92.201:8080/API/"+u1+"?choice=remove&id="+removeid+"";
+    $.getJSON(url, function(data) {
+        window.location.reload();
+    });
 }
 function r2(removeid) {
-    var url = "http://localhost:8080/API/"+u2+"?choice=remove&id="+removeid+"";
-    $.getJSON(url, function(data) {});
-    window.location.reload();
+    var url = "http://47.94.92.201:8080/API/"+u2+"?choice=remove&id="+removeid+"";
+    $.getJSON(url, function(data) {
+        window.location.reload();
+    });
 }
 function r3(removeid) {
-    var url = "http://localhost:8080/API/"+u3+"?choice=remove&id="+removeid+"";
-    $.getJSON(url, function(data) {});
-    window.location.reload();
+    var url = "http://47.94.92.201:8080/API/"+u3+"?choice=remove&id="+removeid+"";
+    $.getJSON(url, function(data) {
+        window.location.reload();
+    });
 }
 // 编辑
 function e1(editid){
 
-    $.getJSON("http://localhost:8080/API/"+u1+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save1 .save-class:first").val(data[x].title);
-            $("#save1 .save-class:eq(1) .note-editable").text(data[x].content);
+            $("#save1 .save-class:eq(1) .note-editable").html(data[x].content);
             $("#save1 .save-class:last").val(data[x].id);
         }
     });
 }
 function e2(editid){
-    $.getJSON("http://localhost:8080/API/"+u2+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://47.94.92.201:8080/API/"+u2+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save2 .save-class:first").val(data[x].title);
-            $("#save2 .save-class:eq(1) .note-editable").text(data[x].content);
+            $("#save2 .save-class:eq(1) .note-editable").html(data[x].content);
             $("#save2 .save-class:last").val(data[x].id);
         }
     });
 }
 function e3(editid){
-    $.getJSON("http://localhost:8080/API/"+u3+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://47.94.92.201:8080/API/"+u3+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save3 .save-class:first").val(data[x].title);
-            $("#save3 .save-class:eq(1) .note-editable").text(data[x].content);
+            $("#save3 .save-class:eq(1) .note-editable").html(data[x].content);
             $("#save3 .save-class:last").val(data[x].id);
         }
     });

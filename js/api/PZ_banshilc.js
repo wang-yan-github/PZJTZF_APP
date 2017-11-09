@@ -25,7 +25,7 @@ var u2 = "BslcCflcAction";
 var u3 = "BslcZzlcAction";
 var u4 = "BslcJclcAction";
 // 列表
-$.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=list", function(data) {
     //for in循环
     for(x in data){
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
@@ -33,7 +33,7 @@ $.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
         $("#save1 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
 });
-$.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u2+"?choice=list", function(data) {
     //for in循环
     for(x in data){
         //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
@@ -41,7 +41,7 @@ $.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
         $("#save2 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
 });
-$.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u3+"?choice=list", function(data) {
     //for in循环
     for(x in data){
         $("#save3 .id-class").text(data[x].id);
@@ -49,7 +49,7 @@ $.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
         $("#save3 .fileinput-filename:first").text(data[x].content.substring(0,35));
     }
 });
-$.getJSON("http://localhost:8080/API/"+u4+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u4+"?choice=list", function(data) {
     //for in循环
     for(x in data){
         $("#save4 .id-class").text(data[x].id);

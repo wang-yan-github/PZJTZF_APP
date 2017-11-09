@@ -16,12 +16,10 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-
+    <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
-
-    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
 
     <!-- FooTable -->
     <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
@@ -116,44 +114,74 @@
                 </ol>
             </div>
         </div>
-
-        <div class="row">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
             <div class="col-lg-3">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>行政许可流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save1">
-                            <input type="hidden" name="choice" value="UploadFile">
-                            <input type="hidden" name="id" class="id-class">
-                            <input type="hidden" name="url" class="url-class">
-                            <input type="hidden" name="date" class="date-class">
-                            <input type="hidden" name="title" value="" class="form-control save-class">
-                            <input type="hidden" name="type" value="BslcXklcAction">
-
-                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
-                                <div class="col-sm-10">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                            <span class="btn btn-default btn-file"><span
-                                                                    class="fileinput-new">添加图片</span><span
-                                                                    class="fileinput-exists">Change</span>
-                                                                <input type="file" name="fileName" class="file-class"/></span>
-                                        <span class="fileinput-filename"></span>
-                                        <a href="#" class="close fileinput-exists"
-                                           data-dismiss="fileinput" style="float: none">&times;</a>
-                                    </div>
-                                </div>
+                        <div class="lightBoxGallery">
+                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            </a>
+                            <div id="blueimp-gallery" class="blueimp-gallery">
+                                <div class="slides"></div>
+                                <h3 class="title"></h3>
+                                <a class="prev">‹</a>
+                                <a class="next">›</a>
+                                <a class="close">×</a>
+                                <a class="play-pause"></a>
+                                <ol class="indicator"></ol>
                             </div>
-                            <input type="hidden" class="save-class">
-
-                        </form>
+                        </div>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s1()">更新</button>
+                            <button type="button" class="pull-right btn btn-primary demo2" data-toggle="modal"
+                                    data-target="#m1">更换</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal inmodal" id="m1" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content animated bounceInRight">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span
+                                        aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                </button>
+                                <h4 class="modal-title">更换流程图</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://47.94.92.201:8080/API/UploadAction" id="save1">
+                                    <input type="hidden" name="choice" value="UploadFile">
+                                    <input type="hidden" name="id" class="id-class">
+                                    <input type="hidden" name="url" class="url-class">
+                                    <input type="hidden" name="date" class="date-class">
+                                    <input type="hidden" name="type" value="FjLbtAction">
+                                    <div class="form-group"><label class="col-sm-2 control-label">行政许可流程图</label>
+                                        <div class="col-sm-10">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <span class="btn btn-default btn-file"><span
+                                                        class="fileinput-new">添加图片</span><span
+                                                        class="fileinput-exists">Change</span>
+                                                    <input type="file" name="fileName"/></span>
+                                                <span class="fileinput-filename"></span>
+                                                <a href="#" class="close fileinput-exists"
+                                                   data-dismiss="fileinput" style="float: none">&times;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" class="save-class">
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                                <input type="button" class="btn btn-primary" onclick="s1()" value="提交"/>
+                            </div>
 
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-3">
@@ -162,36 +190,15 @@
                         <h5>行政处罚流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save2">
-                            <input type="hidden" name="choice" value="UploadFile">
-                            <input type="hidden" name="id" class="id-class">
-                            <input type="hidden" name="url" class="url-class">
-                            <input type="hidden" name="date" class="date-class">
-                            <input type="hidden" name="title" value="" class="form-control save-class">
-                            <input type="hidden" name="type" value="BslcCflcAction">
-
-                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
-                                <div class="col-sm-10">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                            <span class="btn btn-default btn-file"><span
-                                                                    class="fileinput-new">添加图片</span><span
-                                                                    class="fileinput-exists">Change</span>
-                                                                <input type="file" name="fileName" class="file-class"/></span>
-                                        <span class="fileinput-filename"></span>
-                                        <a href="#" class="close fileinput-exists"
-                                           data-dismiss="fileinput" style="float: none">&times;</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="hidden" class="save-class">
-
-                        </form>
+                        <div class="lightBoxGallery">
+                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            </a>
+                        </div>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s2()">更新</button>
-
+                            <button type="button" class="pull-right btn btn-primary demo2">更换</button>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-3">
@@ -200,77 +207,36 @@
                         <h5>行政强制流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save3">
-                            <input type="hidden" name="choice" value="UploadFile">
-                            <input type="hidden" name="id" class="id-class">
-                            <input type="hidden" name="url" class="url-class">
-                            <input type="hidden" name="date" class="date-class">
-                            <input type="hidden" name="title" value="" class="form-control save-class">
-                            <input type="hidden" name="type" value="BslcZzlcAction">
-
-                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
-                                <div class="col-sm-10">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                            <span class="btn btn-default btn-file"><span
-                                                                    class="fileinput-new">添加图片</span><span
-                                                                    class="fileinput-exists">Change</span>
-                                                                <input type="file" name="fileName" class="file-class"/></span>
-                                        <span class="fileinput-filename"></span>
-                                        <a href="#" class="close fileinput-exists"
-                                           data-dismiss="fileinput" style="float: none">&times;</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="hidden" class="save-class">
-
-                        </form>
+                        <div class="lightBoxGallery">
+                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            </a>
+                        </div>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s3()">更新</button>
-
+                            <button type="button" class="pull-right btn btn-primary demo2">更换</button>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="ibox">
                     <div class="ibox-title">
-                        <h5>行政监察流程管理</h5>
+                        <h5>行政检查流程管理</h5>
                     </div>
                     <div class="ibox-content">
-                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="http://localhost:8080/API/UploadAction" id="save4">
-                            <input type="hidden" name="choice" value="UploadFile">
-                            <input type="hidden" name="id" class="id-class">
-                            <input type="hidden" name="url" class="url-class">
-                            <input type="hidden" name="date" class="date-class">
-                            <input type="hidden" name="title" value="" class="form-control save-class">
-                            <input type="hidden" name="type" value="BslcJclcAction">
-
-                            <div class="form-group"><label class="col-sm-2 control-label">图片</label>
-                                <div class="col-sm-10">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                            <span class="btn btn-default btn-file"><span
-                                                                    class="fileinput-new">添加图片</span><span
-                                                                    class="fileinput-exists">Change</span>
-                                                                <input type="file" name="fileName" class="file-class"/></span>
-                                        <span class="fileinput-filename"></span>
-                                        <a href="#" class="close fileinput-exists"
-                                           data-dismiss="fileinput" style="float: none">&times;</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="hidden" class="save-class">
-
-                        </form>
+                        <div class="lightBoxGallery">
+                            <a href="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png" title="Image from Unsplash" data-gallery="">
+                                <img style="width: 100%;height: 100%;objec-fit: cover;" src="http://47.94.92.201:8080/API/UploadAction?choice=UploadFind&Location=tb_bslcxklc.png">
+                            </a>
+                        </div>
                         <div class="ibox-content">
-                            <button type="button" class="pull-right btn btn-primary demo2" onclick="s4()">更新</button>
-
+                            <button type="button" class="pull-right btn btn-primary demo2">更换</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        </div>
     </div>
 </div>
 
@@ -292,8 +258,8 @@
 <!-- Jasny -->
 <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
 
-<!-- SUMMERNOTE -->
-<script src="js/plugins/summernote/summernote.min.js"></script>
+<!-- blueimp gallery -->
+<script src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
 
 <!-- Page-Level Scripts -->
 <script>
@@ -301,15 +267,6 @@
 
         $('.footable').footable();
         $('.footable2').footable();
-        $('.summernote').summernote({
-            toolbar: [
-
-            ],
-            height: 300,
-            focus: true,
-            maxHeight: null,
-            minHeight: null,
-        });
 
     });
 

@@ -1,4 +1,4 @@
-$.getJSON("http://localhost:8080/API/GxzdZfgsAction?choice=GxzdZfgsList", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/GxzdZfgsAction?choice=GxzdZfgsList", function(data) {
     $("#table1 tbody").html(""); //清空
     var htmlText = "<tr>";
     //for in循环
@@ -8,7 +8,7 @@ $.getJSON("http://localhost:8080/API/GxzdZfgsAction?choice=GxzdZfgsList", functi
         console.log(data[x].content);
         htmlText += "<td>" + data[x].id +"</td>";
         htmlText += "<td width='30%'>" + data[x].name +"</td>";
-        htmlText += "<td>" + data[x].content.substring(0,30) +"...<a href='http://localhost:8080/API/GxzdZfgsAction?choice=ByldGxzdZfgs&Id="+data[x].id+"'>详细</a></td>";
+        htmlText += "<td>" + data[x].content.substring(0,30) +"...<a href='http://47.94.92.201:8080/API/GxzdZfgsAction?choice=ByldGxzdZfgs&Id="+data[x].id+"'>详细</a></td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
             "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
@@ -17,7 +17,7 @@ $.getJSON("http://localhost:8080/API/GxzdZfgsAction?choice=GxzdZfgsList", functi
     htmlText += "</tr>";
     $("#table1 tbody").html(htmlText);
 });
-$.getJSON("http://localhost:8080/API/GxzdCwgkAction?choice=GxzdCwgkList", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/GxzdCwgkAction?choice=GxzdCwgkList", function(data) {
     $("#table2 tbody").html(""); //清空
     var htmlText = "<tr>";
     //for in循环
@@ -27,7 +27,7 @@ $.getJSON("http://localhost:8080/API/GxzdCwgkAction?choice=GxzdCwgkList", functi
         console.log(data[x].content);
         htmlText += "<td>" + data[x].id +"</td>";
         htmlText += "<td width='30%'>" + data[x].name +"</td>";
-        htmlText += "<td>" + data[x].content.substring(0,30) +"...<a href='http://localhost:8080/API/GxzdCwgkAction?choice=ByldGxzdCwgk&Id="+data[x].id+"'>详细</a></td>";
+        htmlText += "<td>" + data[x].content.substring(0,30) +"...<a href='http://47.94.92.201:8080/API/GxzdCwgkAction?choice=ByldGxzdCwgk&Id="+data[x].id+"'>详细</a></td>";
         htmlText += "<td> <div class='btn-group'> " +
             "<button type='button' class='btn-primary btn btn-xs'>编辑</button> " +
             "<button type='button' class='btn-danger btn btn-xs'>删除</button> " +
@@ -36,7 +36,7 @@ $.getJSON("http://localhost:8080/API/GxzdCwgkAction?choice=GxzdCwgkList", functi
     htmlText += "</tr>";
     $("#table2 tbody").html(htmlText);
 });
-$.getJSON("http://localhost:8080/API/GxzdSsfaAction?choice=GxzdSsfaList", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/GxzdSsfaAction?choice=GxzdSsfaList", function(data) {
     $("#table3 tbody").html(""); //清空
     var htmlText = "<tr>";
     //for in循环
@@ -55,7 +55,3 @@ $.getJSON("http://localhost:8080/API/GxzdSsfaAction?choice=GxzdSsfaList", functi
     htmlText += "</tr>";
     $("#table3 tbody").html(htmlText);
 });
-
-$("#b01").click(
-
-);

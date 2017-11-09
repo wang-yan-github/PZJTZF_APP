@@ -21,7 +21,7 @@ Date.prototype.format = function(fmt) {
 var date = new Date().format("yyyy-MM-dd hh:mm:ss");
 var u1 = "ZfjjAction";
 // 列表
-$.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=list", function(data) {
     $("#table1 tbody").html(""); //清空
     var htmlText = "";
 
@@ -43,7 +43,7 @@ $.getJSON("http://localhost:8080/API/"+u1+"?choice=list", function(data) {
 
     $("#table1 tbody").html(htmlText);
 });
-$.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u2+"?choice=list", function(data) {
     $("#table2 tbody").html(""); //清空
     var htmlText = "";
 
@@ -65,7 +65,7 @@ $.getJSON("http://localhost:8080/API/"+u2+"?choice=list", function(data) {
 
     $("#table2 tbody").html(htmlText);
 });
-$.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
+$.getJSON("http://47.94.92.201:8080/API/"+u3+"?choice=list", function(data) {
     $("#table3 tbody").html(""); //清空
     var htmlText = "";
 
@@ -90,33 +90,37 @@ $.getJSON("http://localhost:8080/API/"+u3+"?choice=list", function(data) {
 // 添加
 function s1() {
     var si1 = $("#save1 .save-class:first").val();
-    var si2 = $("#save1 .save-class:eq(1) .note-editable").text();
+    var si2 = $("#save1 .save-class:eq(1) .note-editable").html();
     var id = $("#save1 .save-class:last").val();
+    var url = "http://47.94.92.201:8080/API/"+u1;
+    var params;
 
     if(id){
-        var url = "http://localhost:8080/API/"+u1+"?choice=update&id="+id+"&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'update',id:id,title:si1,content:si2,date:date,person:'管理员'};
     }else{
-        var url = "http://localhost:8080/API/"+u1+"?choice=save&title="+si1+"&content="+si2+"&date="+date+"&person=管理员";
+        params = {choice:'save',title:si1,content:si2,date:date,person:'管理员'};
     }
 
-    $.getJSON(url, function(data) {});
-    window.location.reload();
+    $.post(url,params,function(){
+        window.location.reload();
+    });
 }
 // 删除
 function r1(removeid) {
-    var url = "http://localhost:8080/API/"+u1+"?choice=remove&id="+removeid+"";
-    $.getJSON(url, function(data) {});
-    window.location.reload();
+    var url = "http://47.94.92.201:8080/API/"+u1+"?choice=remove&id="+removeid+"";
+    $.getJSON(url, function(data) {
+        window.location.reload();
+    });
 }
 // 编辑
 function e1(editid){
 
-    $.getJSON("http://localhost:8080/API/"+u1+"?choice=find&id="+editid+"", function(data) {
+    $.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=find&id="+editid+"", function(data) {
         //for in循环
         for(x in data){
             //x表示是下标，来指定变量，指定的变量可以是数组元素，也可以是对象的属性。
             $("#save1 .save-class:first").val(data[x].title);
-            $("#save1 .save-class:eq(1) .note-editable").text(data[x].content);
+            $("#save1 .save-class:eq(1) .note-editable").html(data[x].content);
             $("#save1 .save-class:last").val(data[x].id);
         }
     });
