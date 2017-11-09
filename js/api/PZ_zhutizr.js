@@ -27,6 +27,15 @@ var u5 = "ZtzdDfhscAction";
 var u6 = "ZtzdHdglzAction";
 var u7 = "ZtzdGkglcAction";
 var u8 = "ZtzdJtgczlAction";
+// 清空
+function removeValue(id){
+    $("#save" + id + " .save-class:first").val("");
+    $("#save" + id + " .save-class:eq(1) .note-editable").html("");
+    $("#save" + id + " .save-class:eq(2)").val("");
+    $("#save" + id + " .save-class:eq(3)").val("");
+    $("#save" + id + " .save-class:eq(4)").val("");
+    $("#save" + id + " .save-class:last").val("");
+}
 // 列表
 $.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=list", function(data) {
     $("#table1 tbody").html(""); //清空
