@@ -28,9 +28,32 @@ var u5 = "FjQdymAction";
 var upload = "UploadAction";
 // 清空
 function removeValue(id){
-    $("#save" + id + " .save-class:first").val("");
-    $("#save" + id + " .save-class:eq(1) .note-editable").html("");
-    $("#save" + id + " .save-class:last").val("");
+    if(id == 1){
+        $("#save1 .save-class:first").val("");
+        $("#save1 .fileinput-filename:first").text("");
+        $("#save1 .id-class").val("");
+    }else if(id == 2){
+        $("#save2 .save-class:first").val("");
+        $("#save2 .note-editable").html("");
+        $("#save2 .fileinput-filename:first").text("");
+        $("#save2 .id-class").val("");
+    }else if(id == 3){
+        $("#save3 .save-class:first").val("");
+        $("#save3 .save-class:eq(1) .note-editable").html("");
+        $("#save3 .save-class:last").val("");
+        $("#save3 .save-id").val("");
+    }else if(id == 4){
+        $("#save4 .save-class:first").val("");
+        $("#save4 #save-link").text("");
+        $("#save4 .save-class:last").val("");
+        $("#save4 .save-id").val("");
+    }else if(id == 5){
+        $("#save5 .save-class:first").val("");
+        $("#save5 .fileinput-filename:first").text("");
+        $("#save5 .id-class").val("");
+    }else{
+
+    }
 }
 // 列表
 $.getJSON("http://47.94.92.201:8080/API/"+u1+"?choice=list", function(data) {
